@@ -99,8 +99,8 @@
       <input type="text" id="name" required />
       <label for="mobile">Mobile No:</label>
       <input type="text" id="mobile" required />
-      <label for="email">Email ID:</label>
-      <input type="email" id="email" required />
+      <!-- <label for="email">Email ID:</label>
+      <input type="email" id="email" required /> -->
       <label for="room">Hostel Name with Room No:</label>
       <input type="text" id="room" required />
       <label for="item-name">Item Name:</label>
@@ -160,7 +160,7 @@
         document.getElementById("upi-section").style.display = "none";
   
         document.getElementById("pay-now").onclick = function () {
-          const whatsappMessage = `Hi, my order details:\nName: ${name}\nMobile: ${mobile}\nEmail: ${email}\nRoom No: ${room}\nItem: Takatak\nQuantity: ${quantity}\nTotal Amount: ₹${totalAmount}\nPayment: Cash on Delivery`;
+          const whatsappMessage = `Hi, my order details:\nName: ${name}\nMobile: ${mobile}\nRoom No: ${room}\nItem: Takatak\nQuantity: ${quantity}\nTotal Amount: ₹${totalAmount}\nPayment: Cash on Delivery`;
           window.open(`https://wa.me/8126376009?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
           alert("Your order is placed successfully.");
           window.location.href = "/";
@@ -232,7 +232,7 @@
             if (transactionId.length >= 10) {
                 clearInterval(timerInterval);
                 setTimeout(() => {
-                    const whatsappMessage = `Hi, my order details:\nName: ${name}\nMobile: ${mobile}\nEmail: ${email}\nRoom No: ${room}\nItem: Takatak \nQuantity: ${quantity}\nTotal Amount: ₹${totalAmount}\nPayment: UPI\nTransaction ID: ${transactionId}`;
+                    const whatsappMessage = `Hi, my order details:\nName: ${name}\nMobile: ${mobile}\nRoom No: ${room}\nItem: Takatak \nQuantity: ${quantity}\nTotal Amount: ₹${totalAmount}\nPayment: UPI\nTransaction ID: ${transactionId}`;
                     window.open(`https://wa.me/8126376009?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
                     alert("Payment successful! Redirecting...");
                     window.location.href = "/";
