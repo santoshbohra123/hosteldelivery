@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPI Payment - Generate QR Code</title>
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      input {
+        width: 80%;
+        padding: 10px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      
+      button {
+        background-color: #ffcc00;
+        color: #111;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #ff9900;
+      }
+      
+      #qrcode {
+        margin-top: 20px;
+      }
+      
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>UPI Payment</h1>
+    <p>Enter the amount and click "Pay Now" to generate a QR code for payment.</p>
+    
+    <input type="number" id="amount" placeholder="Enter Amount" required>
+    <button id="pay-now">Pay Now</button>
+    
+    <div id="qr-container" style="display:none;">
+      <h3>Scan this QR code to Pay</h3>
+      <div id="qrcode"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('pay-now').addEventListener('click', function() {
+        const amount = document.getElementById('amount').value;
+        const upiID = '8791273578@ybl';
+      
+        if (amount === '' || amount <= 0) {
+          alert('Please enter a valid amount.');
+          return;
+        }
+      
+        // Create UPI payment link
+        const upiUrl = `upi://pay?pa=${upiID}&pn=NightServes&am=${amount}&cu=INR`;
+      
+        // Show QR code container
+        document.getElementById('qr-container').style.display = 'block';
+      
+        // Generate QR code
+        const qrcodeContainer = document.getElementById('qrcode');
+        qrcodeContainer.innerHTML = ''; // Clear previous QR code
+      
+        const qrcode = new QRCode(qrcodeContainer, {
+          text: upiUrl,
+          width: 200,
+          height: 200,
+        });
+      });
+      
+  </script>
+</body>
+</html>
