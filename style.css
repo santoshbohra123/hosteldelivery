@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .logo {
+    font-size: 3rem;
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px rgba(255, 204, 0, 0.504);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(255, 204, 0, 1);
+    }
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-top: 10px;
+  }
+  
+  .food-items, .testimonials, .contact-us, .delivery-option {
+    margin: 50px 0;
+    text-align: center;
+  }
+  
+  .food-items h2, .testimonials h2, .contact-us h2, .delivery-option h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .item-container, .testimonial-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .item-card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  .item-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .item-card h3 {
+    margin: 15px 0;
+    font-size: 1.8rem;
+    color: #ffcc00;
+  }
+  
+  .item-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 204, 0, 0.7);
+  }
+  
+  .order-btn {
+    background-color: #ffcc00;
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .order-btn:hover {
+    background-color: #ff9900;
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.7);
+  }
+  
+  /* Testimonials Section */
+  .testimonial {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .rating {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    margin-top: 10px;
+  }
+  
+  .contact-us input, .contact-us textarea {
+    width: 300px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .contact-btn {
+    background-color: #ffcc00;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .contact-btn:hover {
+    background-color: #ff9900;
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.7);
+  }
+  
+  footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #222;
+    width: 100%;
+  }
+  
+  footer p {
+    color: #ffcc00;
+    font-size: 1rem;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .item-container, .testimonial-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .item-card, .testimonial {
+      width: 90%;
+    }
+  
+    .contact-us input, .contact-us textarea {
+      width: 90%;
+    }
+   
+  
+  @media (max-width: 576px) {
+    .logo {
+      font-size: 2rem;
+    }
+  
+    .food-items h2, .testimonials h2, .contact-us h2, .delivery-option h2 {
+      font-size: 2rem;
+    } 
+    
+  }
+}
+
+.contact-us {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 50px auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  }
+  
+  .contact-us h2 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    width: 80%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #111;
+  }
+  
+  #contact-form input:focus,
+  #contact-form textarea:focus {
+    outline: 2px solid #ffcc00;
+  }
+  
+  #contact-form textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .contact-btn {
+    background-color: #ffcc00;
+    color: #111;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-btn:hover {
+    background-color: #ff9900;
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.7);
+  }
+  
+  .testimonials {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .testimonial {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(255, 204, 0, 0.1);
+    color: #fff;
+  }
+  
+  .testimonial p {
+    font-size: 1.2rem;
+  }
+  
+  .rating {
+    margin-top: 10px;
+    color: #ffcc00;
+    font-size: 1.5rem;
+  }
+  
+  /* Responsive design for Contact Us form */
+  @media (max-width: 768px) {
+    #contact-form input,
+    #contact-form textarea {
+      width: 95%;
+    }
+  
+    .contact-us {
+      width: 95%;
+    }
+  }
+ 

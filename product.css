@@ -1,0 +1,159 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    margin: 0;
+  }
+
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    /* text-align:center;  */
+    /* margin-left: 0%; */
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 3%;
+  }
+
+  input {
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    background: linear-gradient(45deg, #f3f3f3, #ffffff);
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 3%;
+  }
+
+  select {
+    width: 328px;
+    margin-left: 3%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    background: linear-gradient(45deg, #f3f3f3, #ffffff);
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #2E7D32;
+    box-shadow: 0 0 8px rgba(46, 125, 50, 0.5);
+  }
+
+  select:hover {
+    border-color: #388E3C;
+    background: linear-gradient(45deg, #e8f5e9, #ffffff);
+  }
+
+  .product-image {
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+  }
+
+  button {
+    background-color: #ffcc00;
+    color: #111;
+    padding: 10px;
+    margin-top: 50px;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #ff9900;
+  }
+
+  /* #bill-section{
+display: none;
+  width: 75%;
+  padding: 12px;
+ 
+  background-color: white;
+  /* background: linear-gradient(45deg, #f3f3f3, #ffffff); */
+  /* font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  /* display: flex; */
+  /* text-align: center;
+  justify-content: center;
+
+}  */
+
+  /* #upi-section {
+  display: none;
+  width: 75%;
+  padding: 12px;
+ 
+  /* background: linear-gradient(45deg, #f3f3f3, #ffffff); 
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+  background-color: white;
+} */
+
+  #bill-section,
+  #upi-section {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+   
+
+  }
+  #qrcode {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #timer {
+    font-size: 1.5rem;
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }

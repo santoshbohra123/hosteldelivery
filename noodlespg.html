@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NightServes - Food Order Payment</title>
+  <link rel="stylesheet" href="product.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Food Order Payment</h1>
+    <form id="order-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+      <label for="mobile">Mobile No:</label>
+      <input type="text" id="mobile" required />
+     
+
+      <label for="hostel">Hostel Name:</label>
+      <select name="hostel" id="hostel">
+        <option value="bh2">BH-2</option>
+        <option value="bh1">BH-1</option>
+      </select>
+
+
+      <label for="room">Room No:</label>
+      <input type="number" id="room" min="1" step="1" required />
+
+
+      <label for="item-name">Item Name:</label>
+      <input type="text" id="item-name" value=" Moong dal" disabled />
+      <label for="item-image">Product Image:</label>
+      <img src="moogdal.jpg" alt="Moong dal" class="product-image" />
+
+      <label for="quantity">Total Number of Items:</label>
+      <select id="quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+      </select>
+
+
+      <label for="payment-method">Payment Method:</label>
+      <select id="payment-method">
+        <option value="upi">UPI</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <div id="bill-section" style="display: none">
+      <h3>Your Bill</h3>
+      <p>Item Name: <span id="bill-item-name">Moog Dal</span></p>
+      <p>Total Items: <span id="bill-quantity">1</span></p>
+      <p>Product Price: ₹13</p>
+      <p id="delivery-charge">Delivery Charge: ₹2</p>
+      <p>Total Amount: ₹<span id="total-amount">15</span></p>
+      <button id="pay-now" class="pay-now-btn">Pay Now</button>
+    </div>
+
+    <div id="upi-section" style="display: none">
+      <h3>UPI Payment</h3>
+      <div id="qrcode"></div>
+      <label for="transaction-id">Enter Transaction ID:</label>
+      <input type="text" id="transaction-id" required />
+      <div id="timer">10:00</div>
+
+    </div>
+
+  
+
+</body>
+<script src="product.js"></script>
+
+</html>
