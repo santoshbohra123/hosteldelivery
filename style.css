@@ -67,7 +67,7 @@ padding: 20px;
 .item-container, .testimonial-container {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 20px;
 
 }
@@ -171,7 +171,7 @@ footer p {
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 568px) {
+@media (max-width: 768px) {
   .item-container, .testimonial-container {
     flex-direction: row;
     align-items: center;
