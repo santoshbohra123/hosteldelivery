@@ -59,7 +59,7 @@ document.getElementById("order-form").addEventListener("submit", function (event
         document.getElementById("upi-section").style.display = "block";
 
 
-        let upiID = "upi://pay?pa=kanyalritik87-1@okhdfcbank&pn=Ritesh Kanyal&am=15&cu=INR";
+        let upiID = "upi://pay?pa=kanyalritik87-1@okhdfcbank&pn=Ritesh Kanyal&am=${totalAmount}&cu=INR";
         let qrcode = new QRCode(document.getElementById("qrcode"), {
           text: upiID,
           width: 128,
