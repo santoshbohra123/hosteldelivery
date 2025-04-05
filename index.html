@@ -15,11 +15,33 @@
   <section class="food-items">
     <h2>Our Food Items</h2>
     <div class="item-container">
+
+      <div class="item-card">
+        <img src="milk.jpg" alt="milk">
+        <h3>Milk</h3>
+        <h5>13 ₹</h5>
+        <button class="order-btn" id="order-btn" onclick="location.href='milk.html'">Order Now</button>
+      </div>
+
+      <div class="item-card">
+        <img src="navratan.jpg" alt="navratn">
+        <h3>Navrattan Namkeen</h3>
+        <h5>13 ₹</h5>
+        <button class="order-btn" id="order-btn" onclick="location.href='navratan.html'">Order Now</button>
+      </div>
+
+      <div class="item-card">
+        <img src="coffie.jpg" alt="Biscuits">
+        <h3>Coffie</h3>
+        <h5>3 ₹</h5>
+        <button class="order-btn" id="order-btn" onclick="location.href='coffie.html'">Order Now</button>
+      </div>
+
       <div class="item-card">
         <img src="orio.jpg" alt="Biscuits">
         <h3>Oreo Biscuits</h3>
         <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='oreo.html'">Order Now</button>
+        <button class="order-btn" id="order-btn" onclick="location.href='oreo.html'">Order Now</button>
       </div>
       <div class="item-card">
         <img src="nutcracker.jpg" alt="Nut Cracker ">
@@ -131,6 +153,7 @@
   </footer>
   
   <script>
+
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
       
