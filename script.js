@@ -1,3 +1,25 @@
+
+const unavailableItem = ["Noodles", "Nut Cracker", "Lay's-Red"]; // Change these as needed
+
+window.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".item-card");
+
+  cards.forEach(card => {
+    const name = card.querySelector("h3")?.textContent?.trim();
+    if (unavailableItem.includes(name)) {
+      card.classList.add("unavailable");
+
+      const overlay = document.createElement("div");
+      overlay.className = "not-available-overlay";
+      overlay.innerHTML = `<span class="notice-text">Currently Not Available</span>`;
+      card.appendChild(overlay);
+    }
+  });
+});
+
+
+
+
 const addBtns = document.querySelectorAll(".add-btn");
 const qtyControls = document.querySelectorAll(".qty-control");
 const qtyDisplays = document.querySelectorAll(".qty");
