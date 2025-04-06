@@ -1,115 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NightServes - Order Food at Any Hour!</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1 class="logo">NightServes</h1>
-    <p class="tagline">Delicious food, delivered anytime at Night!</p>
-  </header>
 
-  <section class="food-items">
-    <h2>Our Food Items</h2>
-    <div class="item-container">
 
-      <div class="item-card">
-        <img src="milk.jpg" alt="milk">
-        <h3>Milk</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" id="order-btn" onclick="location.href='milk.html'">Order Now</button>
-      </div>
 
-      <div class="item-card">
-        <img src="navratan.jpg" alt="navratn">
-        <h3>Navrattan Namkeen</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" id="order-btn" onclick="location.href='navratan.html'">Order Now</button>
+<header>
+  <nav>
+    <!-- Navigation content -->
+    <div id="navbar">
+      
+      <h1 class="logo" style="display: flex; align-items: center; gap: 8px;">NightServes</h1>
+      <div class="cart-container" style="display: flex; align-items: center; gap: 8px;">
+        
+        <!-- Blank (Outline) Cart SVG -->
+        <svg id="cart-photo" class="Cart" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#000000"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        
+        <!-- Cart Label -->
+        <span class="Cart" id="cart-text" style="font-size: 16px; font-weight: 500;">My Cart</span>
+        
       </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
 
-      <div class="item-card">
-        <img src="coffie.jpg" alt="Biscuits">
-        <h3>Coffie</h3>
-        <h5>3 ₹</h5>
-        <button class="order-btn" id="order-btn" onclick="location.href='coffie.html'">Order Now</button>
+<section class="food-items">
+  <p class="tagline">Delicious food, delivered anytime at Night!</p>
+  <h2>Our Food Items</h2>
+  <div class="item-container">
+    <!-- Food items will be listed here -->
+    <div class="item-card">
+      <img src="orio.jpg" alt="Biscuits">
+      <h3>Oreo Biscuits</h3>
+      <h5 class="price">13</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
       </div>
+    </div>
 
-      <div class="item-card">
-        <img src="orio.jpg" alt="Biscuits">
-        <h3>Oreo Biscuits</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" id="order-btn" onclick="location.href='oreo.html'">Order Now</button>
+    <div class="item-card">
+      <img src="nutcracker.jpg" alt="Nut Cracker ">
+      <h3>Nut Cracker</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
       </div>
-      <div class="item-card">
-        <img src="nutcracker.jpg" alt="Nut Cracker ">
-        <h3>Nut Cracker</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='nutcracker.html'">Order Now</button>
-      </div>
-      <div class="item-card">
-        <img src="takatak.jpg" alt="Chips">
-        <h3> Takatak Kurkure</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='takatak.html'">Order Now</button>
-      </div>
-      <div class="item-card">
-        <img src="maggieimage.jpg" alt="Noodles">
-        <h3>Noodles</h3>
-        <h5>Not Available Now</h5>
-        <button class="order-btn" onclick="location.href='notavail.html'">Order Now</button>
-      </div>
-      <div class="item-card">
-        <img src="uncle.jpg" alt="laysred">
-        <h3>Uncle Chipps</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='uncle.html'">Order Now</button>
-      </div>
+    </div>
 
-      <div class="item-card">
-        <img src="Bourbon.png" alt="Bourbon">
-        <h3>Bourbon Biscuits</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='Bourbon.html'">Order Now</button>
+    <div class="item-card">
+      <img src="takatak.jpg" alt="Chips">
+      <h3> Takatak Kurkure</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
       </div>
-      <div class="item-card">
-        <img src="moogdal.jpg" alt="Moong Dal ">
-        <h3>Moong Dal</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='moogdal.html'">Order Now</button>
-      </div>
-      <div class="item-card">
-        <img src="snacklite.jpg" alt="Snack Lite ">
-        <h3>Snack Lite</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='snacklite.html'">Order Now</button>
-      </div>
-
-      <div class="item-card">
-        <img src="laysblue.jpg" alt="laysblue">
-        <h3>Lay's-Blue</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='laysblue.html'">Order Now</button>
-      </div>
-
-      <div class="item-card">
-        <img src="laysred.jpg" alt="laysred">
-        <h3>Lay's-Red</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='laysred.html'">Order Now</button>
-      </div>
-
-      <div class="item-card">
-        <img src="panjabitadka.jpeg" alt="Punjabi Tadka">
-        <h3> Punjabi Tadka</h3>
-        <h5>13 ₹</h5>
-        <button class="order-btn" onclick="location.href='punjabitadka.html'">Order Now</button>
+    </div>
+    <div class="item-card">
+      <img src="maggieimage.jpg" alt="Noodles">
+      <h3>Noodles</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
       </div>
 
     </div>
-  </section>
+    <div class="item-card">
+      <img src="uncle.jpg" alt="laysred">
+      <h3>Uncle Chipps</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <img src="Bourbon.png" alt="Bourbon">
+      <h3>Bourbon Biscuits</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="item-card">
+      <img src="moogdal.jpg" alt="Moong Dal ">
+      <h3>Moong Dal</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="item-card">
+      <img src="snacklite.jpg" alt="Snack Lite ">
+      <h3>Snack Lite</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <img src="laysblue.jpg" alt="laysblue">
+      <h3>Lay's-Blue</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <img src="laysred.jpg" alt="laysred">
+      <h3>Lay's-Red</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <img src="panjabitadka.jpeg" alt="Punjabi Tadka">
+      <h3> Punjabi Tadka</h3>
+      <h5>13 ₹</h5>
+      <div class="add-to-cart">
+        <button class="add-btn">ADD</button>
+        <div class="qty-control" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="qty">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+</section>
+
+
 
   <section class="testimonials">
     <h2>What Our Customers Say</h2>
@@ -140,32 +229,87 @@
       <input type="text" id="name" name="name" placeholder="Your Name" required>
       <input type="email" id="email" name="email" placeholder="Your Email" required>
       <textarea id="message" name="message" placeholder="Your Message"></textarea>
-      
-      <label class="contactnumbers"><input type="radio" name="whatsapp" value="7668607168" checked> Send to 7668607168</label>
+
+      <label class="contactnumbers"><input type="radio" name="whatsapp" value="7668607168" checked> Send to
+        7668607168</label>
       <label class="contactnumbers"><input type="radio" name="whatsapp" value="8126376009"> Send to 8126376009</label>
-      
+
       <button type="submit" class="contact-btn submitbtn">Submit</button>
     </form>
   </section>
-  
+
   <footer>
     <p>NightServes © 2024 | Serving deliciousness all night long!</p>
   </footer>
-  
-  <script>
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      
-      const selectedNumber = document.querySelector('input[name="whatsapp"]:checked').value;
-  
-      const whatsappURL = `https://wa.me/${selectedNumber}?text=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
-      window.open(whatsappURL, '_blank');
-    });
-  </script>
+<!-- Cart Modal -->
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-modal-content">
+    <span class="close-cart">&times;</span>
+    <h2>Bill Details</h2>
+
+    <div id="cart-items-list"></div>
+
+    <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
+
+    <!-- Moved outside inner div to make sure it's visible -->
+    <button id="proceed-btn" class="proceed-btn">Proceed</button>
+  </div>
+</div>
+
+<!-- User Details Modal -->
+<div id="user-details-modal" class="user-details-modal">
+  <div class="user-details-content">
+    <span class="close-user-details">&times;</span>
+    <h2>Enter Your Details</h2>
+
+    <form id="user-form">
+      <label>Name:<input type="text" name="name" required></label><br>
+
+      <label>Hostel Name:
+        <select name="hostel" required>
+          <option value="">Select</option>
+          <option value="BH-1">BH-1</option>
+          <option value="BH-2">BH-2</option>
+        </select>
+      </label><br>
+
+      <label>Room No:<input type="number" name="room" required></label><br>
+      <label>Phone Number:<input type="tel" name="phone" required></label><br>
+
+      <div id="user-items-summary">
+        <h3>Your Order:</h3>
+        <!-- Items go here -->
+      </div>
+
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- Payment Modal -->
+<div id="payment-modal" class="payment-modal">
+  <div class="payment-content">
+    <span class="close-payment">&times;</span>
+    <h2>Select Payment Option</h2>
+    <button id="pay-now-btn">Pay Now</button>
+    <button id="pay-later-btn">Cash On Delivery</button>
+
+    <div id="pay-now-section" style="display:none;">
+      <h3>Scan & Pay</h3>
+      <img src="qr.jpg" alt="QR Code" style="width: 100%; max-width: 250px; margin: 10px auto;" />
+      <label>Transaction ID:
+        <input type="text" id="txn-id" placeholder="Enter Transaction ID">
+      </label>
+      <button id="send-details-btn" disabled>Send Details</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
 </body>
+
 </html>

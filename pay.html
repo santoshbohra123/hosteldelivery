@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Payment</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 40px; }
+    #send-details-btn:disabled { background: grey; cursor: not-allowed; }
+    #send-details-btn { padding: 10px; background: #2d89ef; color: white; border: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Scan & Pay</h2>
+  <img src="qr.jpg" alt="QR Code" style="width: 100%; max-width: 250px;" />
+  <p>Enter Transaction ID:</p>
+  <input type="text" id="txn-id" placeholder="e.g., TXN123456"><br><br>
+  <button id="send-details-btn" disabled>Send Details</button>
+
+  <script>
+    const txnInput = document.getElementById("txn-id");
+    const sendDetailsBtn = document.getElementById("send-details-btn");
+
+    txnInput.addEventListener("input", () => {
+      sendDetailsBtn.disabled = txnInput.value.trim() === "";
+    });
+
+    sendDetailsBtn.addEventListener("click", () => {
+  const txnID = txnInput.value.trim();
+  if (!txnID) return alert("Please enter Transaction ID");
+
+  // ✅ Fetch fresh data before clearing
+  const cart = JSON.parse(localStorage.getItem("cart")) || {};
+  const userDetails = JSON.parse(localStorage.getItem("userDetails")) || {};
+
+  if (!userDetails.name || Object.keys(cart).length === 0) {
+    alert("Missing user/cart info");
+    return;
+  }
+
+  let msg = `*New Order Received!*\n`;
+  msg += `👤 Name: ${userDetails.name}\n🏠 Hostel: ${userDetails.hostel}, Room: ${userDetails.room}\n📞 Phone: ${userDetails.phone}\n`;
+  msg += `💸 Transaction ID: ${txnID}\n\n🧾 Order Summary:\n`;
+
+  let total = 0;
+  for (let item in cart) {
+    const qty = cart[item].qty;
+    const price = cart[item].price;
+    const subtotal = qty * price;
+    total += subtotal;
+    msg += `• ${item} × ${qty} = ₹${subtotal}\n`;
+  }
+
+  if (userDetails.hostel.trim().toUpperCase() === "BH-1") {
+    msg += `\n🚚 Delivery Charge: ₹2`;
+    total += 2;
+  }
+
+  msg += `\n\n💰 Total: ₹${total}`;
+
+  // ✅ Send and clear
+  window.location.href = `https://wa.me/917668607168?text=${encodeURIComponent(msg)}`;
+  setTimeout(() => {
+    localStorage.removeItem("cart");
+    localStorage.removeItem("userDetails");
+  }, 1500);
+});
+
+  </script>
+</body>
+</html>
