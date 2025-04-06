@@ -67,7 +67,7 @@
       <h3>Your Bill</h3>
       <p>Item Name: <span id="bill-item-name">Coffie</span></p>
       <p>Total Items: <span id="bill-quantity">1</span></p>
-      <p>Product Price: ₹2</p>
+      <p>Product Price: ₹3</p>
       <p id="delivery-charge">Delivery Charge: ₹1</p>
       <p>Total Amount: ₹0<span id="total-amount">3</span></p>
       <button id="pay-now" class="pay-now-btn">Pay Now</button>
@@ -106,11 +106,11 @@
     let totalAmount;
 
     if (hostelValue === "BH2" || hostelValue === "BH-2") {
-      const productPrice = 2;
+      const productPrice = 3;
       totalAmount = quantity * productPrice;
        document.querySelector("#delivery-charge").style.display = "none";
     } else {
-      const productPrice = 2;
+      const productPrice = 3;
       const deliveryCharge = 1;
       totalAmount = quantity * productPrice + deliveryCharge;
     }
