@@ -1,5 +1,5 @@
 
-const unavailableItem = ["Noodles", "Nut Cracker", "Lay's-Red"]; // Change these as needed
+const unavailableItem = ["Moong Dal", "", ""]; // Change these as needed
 
 window.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".item-card");
