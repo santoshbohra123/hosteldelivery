@@ -1,20 +1,20 @@
 
-const unavailableItem = ["Moong Dal", "", ""]; // Change these as needed
+const unavailableItem = ["Moong Dal", "Nut Cracker", "Oreo Biscuits", "Takatak Kurkure", "Noodles", "Uncle Chipps", "Bourbon Biscuits", "Snack Lite", "Lay's-Blue", "Lay's-Red", "Punjabi Tadka", "Amul Milk", "Coffie", ""]; // Change these as needed
 
 window.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".item-card");
+    const cards = document.querySelectorAll(".item-card");
 
-  cards.forEach(card => {
-    const name = card.querySelector("h3")?.textContent?.trim();
-    if (unavailableItem.includes(name)) {
-      card.classList.add("unavailable");
+    cards.forEach(card => {
+        const name = card.querySelector("h3")?.textContent?.trim();
+        if (unavailableItem.includes(name)) {
+            card.classList.add("unavailable");
 
-      const overlay = document.createElement("div");
-      overlay.className = "not-available-overlay";
-      overlay.innerHTML = `<span class="notice-text">Currently Not Available</span>`;
-      card.appendChild(overlay);
-    }
-  });
+            const overlay = document.createElement("div");
+            overlay.className = "not-available-overlay";
+            overlay.innerHTML = `<span class="notice-text">Currently Not Available</span>`;
+            card.appendChild(overlay);
+        }
+    });
 });
 
 
@@ -50,8 +50,8 @@ function updateCartDisplay() {
 
         const cartItem = document.createElement("div");
         cartItem.classList.add("cart-item");
-       // console.log(cartItem); 
-        
+        // console.log(cartItem); 
+
         cartItem.innerHTML = `
         <img src="${item.image}" alt="${name}">
         <div>
@@ -60,7 +60,7 @@ function updateCartDisplay() {
         <p>Price: ₹${itemTotal}</p>
         </div>
         `;
-       // console.log(cartItem); // For debugging
+        // console.log(cartItem); // For debugging
 
         cartItemsList.appendChild(cartItem);
     }
@@ -166,148 +166,148 @@ console.log(cart); // For debugging
 
 
 // document.addEventListener("DOMContentLoaded", function () {
-    const proceedBtn = document.getElementById("proceed-btn");
-    const userDetailsModal = document.getElementById("user-details-modal");
-    const closeUserDetails = document.querySelector(".close-user-details");
-    const userItemsSummary = document.getElementById("user-items-summary");
-    const userForm = document.getElementById("user-form");
-    // console.log(userForm); // For debugging
+const proceedBtn = document.getElementById("proceed-btn");
+const userDetailsModal = document.getElementById("user-details-modal");
+const closeUserDetails = document.querySelector(".close-user-details");
+const userItemsSummary = document.getElementById("user-items-summary");
+const userForm = document.getElementById("user-form");
+// console.log(userForm); // For debugging
 
-    // Make sure cart exists
-    // let cart = JSON.parse(localStorage.getItem("cart")) || {};
+// Make sure cart exists
+// let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-    proceedBtn.addEventListener("click", () => {
-        document.getElementById("cart-modal").style.display = "none"; // ✅ Hide bill details
-        userDetailsModal.style.display = "block"; // ✅ Show user details form
+proceedBtn.addEventListener("click", () => {
+    document.getElementById("cart-modal").style.display = "none"; // ✅ Hide bill details
+    userDetailsModal.style.display = "block"; // ✅ Show user details form
 
-        // Populate item summary
-        userItemsSummary.innerHTML = "<h3>Your Order:</h3>";
-        let totalQty = 0;
+    // Populate item summary
+    userItemsSummary.innerHTML = "<h3>Your Order:</h3>";
+    let totalQty = 0;
 
-        for (let name in cart) {
-            const item = cart[name];
-            totalQty += item.qty;
+    for (let name in cart) {
+        const item = cart[name];
+        totalQty += item.qty;
 
-            userItemsSummary.innerHTML += `<p>${name} × ${item.qty}</p>`;
-        }
+        userItemsSummary.innerHTML += `<p>${name} × ${item.qty}</p>`;
+    }
 
-        if (totalQty > 20) {
-            alert("Maximum 20 items allowed!");
-            userDetailsModal.style.display = "none";
-            return;
-        }
-
-        userItemsSummary.innerHTML += `<p><strong>Total Items: ${totalQty}</strong></p>`;
-    });
-
-
-
-
-    closeUserDetails.addEventListener("click", () => {
+    if (totalQty > 20) {
+        alert("Maximum 20 items allowed!");
         userDetailsModal.style.display = "none";
-    });
+        return;
+    }
 
-    userForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-      
-        const data = new FormData(userForm);
-        userDetails = Object.fromEntries(data.entries());
-      
-        localStorage.setItem("userDetails", JSON.stringify(userDetails));
-        console.log("user details "+userDetails); // For debugging
-      
-        userDetailsModal.style.display = "none";
-        paymentModal.style.display = "block";
-      });
-      
+    userItemsSummary.innerHTML += `<p><strong>Total Items: ${totalQty}</strong></p>`;
+});
+
+
+
+
+closeUserDetails.addEventListener("click", () => {
+    userDetailsModal.style.display = "none";
+});
+
+userForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = new FormData(userForm);
+    userDetails = Object.fromEntries(data.entries());
+
+    localStorage.setItem("userDetails", JSON.stringify(userDetails));
+    console.log("user details " + userDetails); // For debugging
+
+    userDetailsModal.style.display = "none";
+    paymentModal.style.display = "block";
+});
+
 //} );
 
 
 // document.addEventListener("DOMContentLoaded", function () {
-    const paymentModal = document.getElementById("payment-modal");
-    const closePayment = document.querySelector(".close-payment");
-    const payNowBtn = document.getElementById("pay-now-btn");
-    const payLaterBtn = document.getElementById("pay-later-btn");
-    const txnInput = document.getElementById("txn-id");
-    const sendDetailsBtn = document.getElementById("send-details-btn");
+const paymentModal = document.getElementById("payment-modal");
+const closePayment = document.querySelector(".close-payment");
+const payNowBtn = document.getElementById("pay-now-btn");
+const payLaterBtn = document.getElementById("pay-later-btn");
+const txnInput = document.getElementById("txn-id");
+const sendDetailsBtn = document.getElementById("send-details-btn");
 
-    let userDetails = {};
-    // let cart = JSON.parse(localStorage.getItem("cart")) || {};
+let userDetails = {};
+// let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-    document.getElementById("user-form").addEventListener("submit", function (e) {
-        e.preventDefault();
+document.getElementById("user-form").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        const data = new FormData(e.target);
-        userDetails = Object.fromEntries(data.entries());
+    const data = new FormData(e.target);
+    userDetails = Object.fromEntries(data.entries());
 
-        // Hide user form modal and open payment modal
-        document.getElementById("user-details-modal").style.display = "none";
-        paymentModal.style.display = "block";
-    });
+    // Hide user form modal and open payment modal
+    document.getElementById("user-details-modal").style.display = "none";
+    paymentModal.style.display = "block";
+});
 
-    closePayment.addEventListener("click", () => {
-        paymentModal.style.display = "none";
-    });
+closePayment.addEventListener("click", () => {
+    paymentModal.style.display = "none";
+});
 
-    payNowBtn.addEventListener("click", () => {
-        window.location.href = "pay.html"; // ✅ Redirect to QR + TXN page
-    });
+payNowBtn.addEventListener("click", () => {
+    window.location.href = "pay.html"; // ✅ Redirect to QR + TXN page
+});
 
-    txnInput.addEventListener("input", () => {
-        sendDetailsBtn.disabled = txnInput.value.trim() === "";
-    });
+txnInput.addEventListener("input", () => {
+    sendDetailsBtn.disabled = txnInput.value.trim() === "";
+});
 
-    sendDetailsBtn.addEventListener("click", () => {
-        const txnID = txnInput.value.trim();
-        if (!txnID) return;
+sendDetailsBtn.addEventListener("click", () => {
+    const txnID = txnInput.value.trim();
+    if (!txnID) return;
 
-        const message = formatMessage(userDetails, cart, txnID);
-        redirectToWhatsApp(message);
-        clearAll();
-    });
+    const message = formatMessage(userDetails, cart, txnID);
+    redirectToWhatsApp(message);
+    clearAll();
+});
 
-    payLaterBtn.addEventListener("click", () => {
-        const message = formatMessage(userDetails, cart);
-        redirectToWhatsApp(message);
-        clearAll();
-    });
+payLaterBtn.addEventListener("click", () => {
+    const message = formatMessage(userDetails, cart);
+    redirectToWhatsApp(message);
+    clearAll();
+});
 
-    function formatMessage(details, cartData, txnID = null) {
-        let msg = `*New Order Received!*\n\n`;
-        msg += `👤 *Name:* ${details.name}\n🏠 *Hostel:* ${details.hostel}, Room: ${details.room}\n📞 *Phone:* ${details.phone}\n`;
-        if (txnID) msg += `💸 *Transaction ID:* ${txnID}\n\n`;
-      
-        msg += `🧾 *Order Summary:*\n`;
-      
-        let total = 0;
-        for (let item in cartData) {
-          const qty = cartData[item].qty;
-          const price = cartData[item].price;
-          const itemTotal = qty * price;
-          total += itemTotal;
-      
-          msg += `• ${item} × ${qty} = ₹${itemTotal}\n`;
-        }
-      
-        if (details.hostel.trim().toUpperCase() === "BH-1") {
-          msg += `\n🚚 *Delivery Charge:* ₹2`;
-          total += 2;
-        }
-      
-        msg += `\n\n💰 *Total:* ₹${total}`;
-      
-        return encodeURIComponent(msg);
-      }
-      
-    function redirectToWhatsApp(message) {
-        window.location.href = `https://wa.me/917668607168?text=${message}`;
+function formatMessage(details, cartData, txnID = null) {
+    let msg = `*New Order Received!*\n\n`;
+    msg += `👤 *Name:* ${details.name}\n🏠 *Hostel:* ${details.hostel}, Room: ${details.room}\n📞 *Phone:* ${details.phone}\n`;
+    if (txnID) msg += `💸 *Transaction ID:* ${txnID}\n\n`;
+
+    msg += `🧾 *Order Summary:*\n`;
+
+    let total = 0;
+    for (let item in cartData) {
+        const qty = cartData[item].qty;
+        const price = cartData[item].price;
+        const itemTotal = qty * price;
+        total += itemTotal;
+
+        msg += `• ${item} × ${qty} = ₹${itemTotal}\n`;
     }
 
-    function clearAll() {
-        localStorage.removeItem("cart");
-        paymentModal.style.display = "none";
-        setTimeout(() => window.location.href = "/", 500); // Redirect after sending
+    if (details.hostel.trim().toUpperCase() === "BH-1") {
+        msg += `\n🚚 *Delivery Charge:* ₹2`;
+        total += 2;
     }
+
+    msg += `\n\n💰 *Total:* ₹${total}`;
+
+    return encodeURIComponent(msg);
+}
+
+function redirectToWhatsApp(message) {
+    window.location.href = `https://wa.me/917668607168?text=${message}`;
+}
+
+function clearAll() {
+    localStorage.removeItem("cart");
+    paymentModal.style.display = "none";
+    setTimeout(() => window.location.href = "/", 500); // Redirect after sending
+}
 // });
 window.addEventListener("load", () => {
     localStorage.removeItem("cart");
