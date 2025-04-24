@@ -1,5 +1,6 @@
 
-const unavailableItem = ["Moong Dal", "Uncle Chipps",  "Nut Cracker", "surf exel", "Snack Lite", "Tedhe Medhe", "Takatak Kurkure", "Lay's-Blue", "Lay's-Red", "Punjabi Tadka", "Aalu Bhujia", "", "", "", ""]; // Change these as needed
+const unavailableItem = ["Moong Dal", "Uncle Chipps", "Nut Cracker", "surf exel", "Snack Lite", "Tedhe Medhe",
+     "Takatak Kurkure", "Lay's-Blue", "Lay's-Red", "Punjabi Tadka", "Aalu Bhujia", "Tiger Biscuits", "", "", ""]; // Change these as needed
 
 window.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".item-card");
